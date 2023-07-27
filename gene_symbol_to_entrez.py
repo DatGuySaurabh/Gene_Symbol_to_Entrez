@@ -1,6 +1,4 @@
-import argparse
-import gzip
-import csv
+import argparse,gzip,csv 
 
 def create_ste(input):
     ste = {}
@@ -41,5 +39,12 @@ def main():
     new_gmt_lines = replace_symbols_with_entrez(args.gmt_file, ste)
     write_new_gmt_file(args.output_file, new_gmt_lines)
 
+
 if __name__ == '__main__':
     main()
+
+
+# to run on command line -> python gene_symbol_to_entrez.py Homo_sapiens.gene_info.gz h.all.v2023.1.Hs.symbols.gmt h.all.v2023.1.Hs.entrez.gmt
+# gene info file - Homo_sapiens.gene_info.gz
+# gmt symbol input file - h.all.v2023.1.Hs.symbols.gmt
+# gmt entrez output file - h.all.v2023.1.Hs.entrez.gmt
